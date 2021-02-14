@@ -2,8 +2,8 @@ import cn from "classnames";
 import t from "prop-types";
 
 export const Input = ({
-    as,
-    type,
+    as = "input",
+    type = "text",
     id,
     value,
     placeholder,
@@ -53,9 +53,4 @@ Input.propTypes = {
     label: t.string,
     className: t.string,
     inline: t.bool
-};
-
-Input.defaultProps = {
-    as: "input",
-    type: "text"
 };

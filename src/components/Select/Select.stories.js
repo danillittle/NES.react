@@ -26,7 +26,22 @@ export const Props = Template.bind({});
 Props.args = {
     options: data,
     placeholder: "Select...",
-    onChange: (e) => console.log(e.target.value)
+    onChange: (e) => alert(e.target.value)
+};
+
+const KindTemplate = (args) => (
+    <>
+        <Select kind="success" {...args} style={{ marginBottom: 16 }} />
+        <Select kind="warning" {...args} style={{ marginBottom: 16 }} />
+        <Select kind="error" {...args} style={{ marginBottom: 16 }} />
+    </>
+);
+
+export const Kind = KindTemplate.bind({});
+
+Kind.args = {
+    options: data,
+    placeholder: "Select..."
 };
 
 export const Dark = Template.bind({});

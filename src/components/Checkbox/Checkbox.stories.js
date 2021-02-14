@@ -10,7 +10,8 @@ const Template = (args) => <Checkbox {...args} />;
 
 export const Props = Template.bind({});
 Props.args = {
-    label: "Enable"
+    label: "Enable",
+    onChange: (e) => alert(e.target.checked)
 };
 
 export const Dark = Template.bind({});

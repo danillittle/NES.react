@@ -7,6 +7,7 @@ export const Radio = ({
     checked,
     dark,
     onChange,
+    value,
     className,
     ...props
 }) => {
@@ -17,6 +18,7 @@ export const Radio = ({
                 name={name}
                 className={cn("nes-radio", { "is-dark": dark })}
                 onChange={onChange}
+                value={value}
                 checked={checked}
                 {...props}
             />
@@ -31,5 +33,6 @@ Radio.propTypes = {
     checked: t.bool,
     dark: t.bool,
     onChange: t.func,
+    value: t.string,
     className: t.string
 };

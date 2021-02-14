@@ -7,14 +7,15 @@ export default {
 
 const Template = (args) => (
     <>
-        <Radio label="Yes" {...args} />
-        <Radio label="No" {...args} />
+        <Radio label="Yes" value="yes" {...args} />
+        <Radio label="No" value="no" {...args} />
     </>
 );
 
 export const Props = Template.bind({});
 Props.args = {
-    name: "answer"
+    name: "answer",
+    onChange: (e) => alert(e.target.value)
 };
 
 export const Dark = Template.bind({});

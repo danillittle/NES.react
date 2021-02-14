@@ -9,7 +9,7 @@ export const Select = ({
     required,
     onChange,
     value,
-    defaultValue,
+    defaultValue = "",
     options,
     className,
     placeholder,
@@ -68,8 +68,4 @@ Select.propTypes = {
     ),
     className: t.string,
     placeholder: t.string
-};
-
-Select.defaultProps = {
-    defaultValue: ""
 };

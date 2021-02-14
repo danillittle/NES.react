@@ -9,6 +9,31 @@ const Template = (args) => <Input {...args} />;
 
 export const Props = Template.bind({});
 
+const KindTemplate = (args) => (
+    <>
+        <Input
+            kind="success"
+            placeholder="Success"
+            {...args}
+            style={{ marginBottom: 16 }}
+        />
+        <Input
+            kind="warning"
+            placeholder="Warning"
+            {...args}
+            style={{ marginBottom: 16 }}
+        />
+        <Input
+            kind="error"
+            placeholder="Error"
+            {...args}
+            style={{ marginBottom: 16 }}
+        />
+    </>
+);
+
+export const Kind = KindTemplate.bind({});
+
 export const Label = Template.bind({});
 Label.args = {
     id: "label_field",
