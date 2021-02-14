@@ -1,5 +1,4 @@
-import React from "react";
-import { Input } from "../Input";
+import { Input } from "./";
 
 export default {
     title: "Components/Input",

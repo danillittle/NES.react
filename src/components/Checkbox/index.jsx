@@ -8,11 +8,10 @@ export const Checkbox = ({
     dark,
     onChange,
     className,
-    style,
     ...props
 }) => {
     return (
-        <label className={className} style={style}>
+        <label className={className}>
             <input
                 type="checkbox"
                 name={name}
@@ -29,7 +28,8 @@ export const Checkbox = ({
 Checkbox.propTypes = {
     name: t.string,
     label: t.string.isRequired,
-    onChange: t.func,
     checked: t.bool,
-    dark: t.bool
+    dark: t.bool,
+    onChange: t.func,
+    className: t.string
 };

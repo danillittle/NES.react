@@ -8,11 +8,10 @@ export const Radio = ({
     dark,
     onChange,
     className,
-    style,
     ...props
 }) => {
     return (
-        <label className={className} style={style}>
+        <label className={className}>
             <input
                 type="radio"
                 name={name}
@@ -29,7 +28,8 @@ export const Radio = ({
 Radio.propTypes = {
     name: t.string,
     label: t.string.isRequired,
-    onChange: t.func,
     checked: t.bool,
-    dark: t.bool
+    dark: t.bool,
+    onChange: t.func,
+    className: t.string
 };

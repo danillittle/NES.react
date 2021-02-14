@@ -12,12 +12,13 @@ export const Input = ({
     dark,
     label,
     inline,
+    className,
     ...props
 }) => {
     const Tag = as;
 
     return (
-        <div className={cn("nes-field", { "is-inline": inline })}>
+        <div className={cn("nes-field", { "is-inline": inline }, className)}>
             {label ? (
                 <label htmlFor={id} style={dark && { color: "#fff" }}>
                     {label}
@@ -50,6 +51,7 @@ Input.propTypes = {
     kind: t.oneOf(["success", "warning", "error"]),
     dark: t.bool,
     label: t.string,
+    className: t.string,
     inline: t.bool
 };
 
