@@ -1,6 +1,6 @@
-import { Select } from "./";
+import { Select } from ".";
 
-const data = [
+const exampleOptions = [
     {
         id: 1,
         name: "Option 1"
@@ -24,7 +24,7 @@ const Template = (args) => <Select {...args} />;
 
 export const Props = Template.bind({});
 Props.args = {
-    options: data,
+    options: exampleOptions,
     placeholder: "Select...",
     onChange: (e) => alert(e.target.value)
 };
@@ -40,13 +40,13 @@ const KindTemplate = (args) => (
 export const Kind = KindTemplate.bind({});
 
 Kind.args = {
-    options: data,
+    options: exampleOptions,
     placeholder: "Select..."
 };
 
 export const Dark = Template.bind({});
 Dark.args = {
-    options: data,
+    options: exampleOptions,
     placeholder: "Select...",
     dark: true
 };
