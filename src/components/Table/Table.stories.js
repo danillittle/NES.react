@@ -6,21 +6,31 @@ const exampleColumns = [
         dataIndex: "name"
     },
     {
-        title: "Surname",
-        dataIndex: "surname"
+        title: "Email",
+        dataIndex: "email"
+    },
+    {
+        title: "City",
+        render: (item) => item.address.city
     }
 ];
 
 const exampleData = [
     {
         id: 0,
-        name: "Andrey",
-        surname: "Kharitonov"
+        name: "Leanne",
+        email: "Sincere@april.biz",
+        address: {
+            city: "Gwenborough"
+        }
     },
     {
         id: 1,
-        name: "Vladislav",
-        surname: "Kulak"
+        name: "Ervin",
+        email: "Shanna@melissa.tv",
+        address: {
+            city: "Wisokyburgh"
+        }
     }
 ];
 
@@ -34,7 +44,34 @@ const Template = (args) => <Table {...args} />;
 export const Props = Template.bind({});
 
 Props.args = {
-    // render: (item) => <span>{item.value}</span>,
     columns: exampleColumns,
     data: exampleData
+};
+
+export const Bordered = Template.bind({});
+
+Bordered.args = {
+    bordered: true,
+    columns: exampleColumns,
+    data: exampleData
+};
+
+export const Dark = Template.bind({});
+
+Dark.args = {
+    dark: true,
+    bordered: true,
+    columns: exampleColumns,
+    data: exampleData
+};
+Dark.parameters = {
+    backgrounds: {
+        default: "dark",
+        values: [
+            {
+                name: "dark",
+                value: "#212529"
+            }
+        ]
+    }
 };

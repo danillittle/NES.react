@@ -1,12 +1,14 @@
 import cn from "classnames";
 import t from "prop-types";
+import { Thead } from "./Thead";
+import { Tbody } from "./Tbody";
 
 export const Table = ({
+    columns,
     data,
     bordered,
+    centered,
     dark,
-    columns,
-    render,
     className,
     ...props
 }) => {
@@ -16,39 +18,30 @@ export const Table = ({
                 className={cn(
                     "nes-table",
                     { "is-bordered": bordered },
+                    { "is-centered": centered },
                     { "is-dark": dark },
                     className
                 )}
                 {...props}
             >
-                {columns ? (
-                    <thead>
-                        <tr>
-                            {columns.map(({ title, render }, index) => (
-                                <td key={index}>
-                                    {render ? render(title) : title}
-                                </td>
-                            ))}
-                        </tr>
-                    </thead>
-                ) : null}
-                <tbody>
-                    {data.map((item, index) => (
-                        <tr key={index}>
-                            {columns.map(({ dataIndex }, index) => (
-                                <td key={index}>{item[dataIndex]}</td>
-                            ))}
-                        </tr>
-                    ))}
-                </tbody>
+                <Thead columns={columns} />
+                <Tbody columns={columns} data={data} />
             </table>
         </div>
     );
 };
 
-List.propTypes = {
+Table.propTypes = {
+    columns: t.arrayOf(
+        t.shape({
+            title: t.string,
+            dataIndex: t.string,
+            render: t.func
+        })
+    ),
     data: t.array,
-    kind: t.oneOf(["disc", "circle"]),
-    render: t.func,
+    bordered: t.bool,
+    centered: t.bool,
+    dark: t.bool,
     className: t.string
 };
