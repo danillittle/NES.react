@@ -37,12 +37,12 @@ export const Select = ({
                         {placeholder}
                     </option>
                 ) : null}
-                {options.map((option, index) => (
+                {options.map((item, index) => (
                     <option
-                        key={option.id || index}
-                        value={option.value || option.id || option.name}
+                        key={index}
+                        value={item.value || item.id || item.name}
                     >
-                        {option.name}
+                        {item.name}
                     </option>
                 ))}
             </select>
