@@ -1,4 +1,4 @@
-import { Radio } from "./";
+import { Radio } from ".";
 
 export default {
     title: "Components/Radio",
