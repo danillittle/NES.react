@@ -38,6 +38,8 @@ export const Dialog = ({
     onCancel,
     okButtonProps,
     cancelButtonProps,
+    okText,
+    cancelText,
     ...props
 }) => {
     return (
@@ -59,6 +61,8 @@ export const Dialog = ({
                     onCancel={onCancel}
                     okButtonProps={okButtonProps}
                     cancelButtonProps={cancelButtonProps}
+                    okText={okText}
+                    cancelText={cancelText}
                 />
             </div>
         </dialog>
@@ -67,6 +71,8 @@ export const Dialog = ({
 
 Dialog.propTypes = {
     visible: t.bool,
+    children: t.node,
+    title: t.string,
     rounded: t.bool,
     dark: t.bool,
     className: t.string,
