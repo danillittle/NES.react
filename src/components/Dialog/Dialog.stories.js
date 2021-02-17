@@ -30,3 +30,19 @@ Props.args = {
     title: "Dialog",
     okButtonProps: { kind: "primary" }
 };
+
+export const Dark = Template.bind({});
+
+Dark.args = {
+    title: "Dark dialog",
+    okButtonProps: { kind: "primary" },
+    dark: true
+};
+
+export const Rounded = Template.bind({});
+
+Rounded.args = {
+    title: "Rounded dialog",
+    okButtonProps: { kind: "primary" },
+    rounded: true
+};
