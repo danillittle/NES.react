@@ -46,9 +46,5 @@
     "bugs": {
         "url": "https://github.com/danillittle/NES.react/issues"
     },
-    "homepage": "https://github.com/danillittle/NES.react#readme",
-    "storybook-deployer": {
-        "gitUsername": "Danil Little",
-        "gitEmail": "danilminh@gmail.com"
-    }
+    "homepage": "https://github.com/danillittle/NES.react#readme"
 }
