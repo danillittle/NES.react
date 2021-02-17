@@ -1,4 +1,4 @@
-import { Table } from ".";
+import Table from ".";
 
 const exampleColumns = [
     {
@@ -42,14 +42,12 @@ export default {
 const Template = (args) => <Table {...args} />;
 
 export const Props = Template.bind({});
-
 Props.args = {
     columns: exampleColumns,
     data: exampleData
 };
 
 export const Bordered = Template.bind({});
-
 Bordered.args = {
     bordered: true,
     columns: exampleColumns,
@@ -57,7 +55,6 @@ Bordered.args = {
 };
 
 export const Dark = Template.bind({});
-
 Dark.args = {
     dark: true,
     bordered: true,

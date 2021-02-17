@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Radio = ({
+const Radio = ({
     name,
     label,
     checked,
@@ -36,3 +36,5 @@ Radio.propTypes = {
     value: t.string,
     className: t.string
 };
+
+export default Radio;

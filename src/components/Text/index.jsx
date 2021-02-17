@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Text = ({ children, as = "p", kind, className, ...props }) => {
+const Text = ({ children, as = "p", kind, className, ...props }) => {
     const Tag = as;
 
     return (
@@ -20,3 +20,5 @@ Text.propTypes = {
     kind: t.oneOf(["primary", "success", "warning", "error", "disabled"]),
     className: t.string
 };
+
+export default Text;

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Input = ({
+const Input = ({
     as = "input",
     type = "text",
     id,
@@ -54,3 +54,5 @@ Input.propTypes = {
     className: t.string,
     inline: t.bool
 };
+
+export default Input;

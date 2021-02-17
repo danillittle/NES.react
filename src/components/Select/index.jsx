@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Select = ({
+const Select = ({
     id,
     name,
     kind,
@@ -69,3 +69,5 @@ Select.propTypes = {
     className: t.string,
     placeholder: t.string
 };
+
+export default Select;

@@ -1,4 +1,4 @@
-import { List } from ".";
+import List from ".";
 
 const exampleArray = [
     "Good morning.",
@@ -15,7 +15,6 @@ export default {
 const Template = (args) => <List {...args} />;
 
 export const Props = Template.bind({});
-
 Props.args = {
     data: exampleArray
 };
@@ -38,8 +37,8 @@ const KindTemplate = (args) => (
         <List kind="circle" {...args} />
     </>
 );
-export const Kind = KindTemplate.bind({});
 
+export const Kind = KindTemplate.bind({});
 Kind.args = {
     data: exampleArray
 };

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Container = ({
+const Container = ({
     children,
     title,
     centered,
@@ -21,7 +21,7 @@ export const Container = ({
         )}
         {...props}
     >
-        {title && <p class="title">{title}</p>}
+        {title && <p className="title">{title}</p>}
         {children}
     </div>
 );
@@ -34,3 +34,5 @@ Container.propTypes = {
     dark: t.bool,
     className: t.string
 };
+
+export default Container;

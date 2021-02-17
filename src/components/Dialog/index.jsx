@@ -1,6 +1,6 @@
 import cn from "classnames";
 import t from "prop-types";
-import { Button } from "../Button";
+import { Button } from "../";
 import "./dialog.css";
 
 const Menu = ({
@@ -27,7 +27,7 @@ const Menu = ({
     );
 };
 
-export const Dialog = ({
+const Dialog = ({
     visible,
     children,
     title,
@@ -83,3 +83,5 @@ Dialog.propTypes = {
     okText: t.string,
     cancelText: t.string
 };
+
+export default Dialog;

@@ -1,4 +1,4 @@
-import { Select } from ".";
+import Select from ".";
 
 const exampleOptions = [
     {

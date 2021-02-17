@@ -1,6 +1,6 @@
 import t from "prop-types";
 
-export const Thead = ({ columns }) => {
+const Thead = ({ columns }) => {
     if (!columns) return null;
 
     return (
@@ -21,3 +21,5 @@ Thead.protoTypes = {
         })
     )
 };
+
+export default Thead;

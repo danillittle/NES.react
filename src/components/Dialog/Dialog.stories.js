@@ -1,6 +1,6 @@
 import { useState } from "react";
-import { Dialog } from ".";
-import { Button } from "../Button";
+import Dialog from ".";
+import { Button } from "../";
 
 export default {
     title: "Components/Dialog",

@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const List = ({ data, kind, render, className, ...props }) => {
+const List = ({ data, kind, render, className, ...props }) => {
     return (
         <ul
             className={cn("nes-list", { [`is-${kind}`]: kind }, className)}
@@ -20,3 +20,5 @@ List.propTypes = {
     render: t.func,
     className: t.string
 };
+
+export default List;
