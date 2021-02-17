@@ -1,9 +1,9 @@
 import cn from "classnames";
 import t from "prop-types";
-import { Thead } from "./Thead";
-import { Tbody } from "./Tbody";
+import Thead from "./Thead";
+import Tbody from "./Tbody";
 
-export const Table = ({
+const Table = ({
     columns,
     data,
     bordered,
@@ -45,3 +45,5 @@ Table.propTypes = {
     dark: t.bool,
     className: t.string
 };
+
+export default Table;

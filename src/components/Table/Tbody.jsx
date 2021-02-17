@@ -1,6 +1,6 @@
 import t from "prop-types";
 
-export const Tbody = ({ columns, data }) => {
+const Tbody = ({ columns, data }) => {
     if (!columns || !data) return null;
 
     return (
@@ -27,3 +27,5 @@ Tbody.protoTypes = {
     ),
     data: t.array
 };
+
+export default Tbody;

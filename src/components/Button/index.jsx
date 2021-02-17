@@ -1,14 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Button = ({
-    children,
-    kind,
-    disabled,
-    className,
-    onClick,
-    ...props
-}) => {
+const Button = ({ children, kind, disabled, className, onClick, ...props }) => {
     disabled && (kind = "disabled");
 
     return (
@@ -29,3 +22,5 @@ Button.propTypes = {
     className: t.string,
     onClick: t.func
 };
+
+export default Button;

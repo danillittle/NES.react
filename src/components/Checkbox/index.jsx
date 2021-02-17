@@ -1,7 +1,7 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Checkbox = ({
+const Checkbox = ({
     name,
     label,
     checked,
@@ -33,3 +33,5 @@ Checkbox.propTypes = {
     onChange: t.func,
     className: t.string
 };
+
+export default Checkbox;
