@@ -1,41 +1,79 @@
 import cn from "classnames";
 import t from "prop-types";
+import { Button } from "../Button";
+import "./dialog.css";
+
+const Menu = ({
+    onOk,
+    onCancel,
+    okButtonProps,
+    cancelButtonProps,
+    okText = "Confirm",
+    cancelText = "Cancel"
+}) => {
+    return (
+        <div className="dialog-menu">
+            {onCancel && (
+                <Button onClick={onCancel} {...cancelButtonProps}>
+                    {cancelText}
+                </Button>
+            )}
+            {onOk && (
+                <Button onClick={onOk} {...okButtonProps}>
+                    {okText}
+                </Button>
+            )}
+        </div>
+    );
+};
 
 export const Dialog = ({
-    open,
+    visible,
     children,
     title,
     rounded,
     dark,
     className,
+    onOk,
+    onCancel,
+    okButtonProps,
+    cancelButtonProps,
     ...props
 }) => {
     return (
         <dialog
             className={cn(
-                "nes-table",
+                "nes-dialog",
                 { "is-rounded": rounded },
                 { "is-dark": dark },
                 className
             )}
+            open={visible}
             {...props}
-            open={open}
         >
-            <div className="nes-table-body">
-                {title && <p class="title">{title}</p>}
+            <div className="nes-dialog-body">
+                {title && <p className="title">{title}</p>}
                 {children}
-                <menu class="dialog-menu">
-                    <button class="nes-btn">Cancel</button>
-                    <button class="nes-btn is-primary">Confirm</button>
-                </menu>
+                <Menu
+                    onOk={onOk}
+                    onCancel={onCancel}
+                    okButtonProps={okButtonProps}
+                    cancelButtonProps={cancelButtonProps}
+                />
             </div>
         </dialog>
     );
 };
 
 Dialog.propTypes = {
-    open: t.bool,
+    visible: t.bool,
     rounded: t.bool,
     dark: t.bool,
-    className: t.string
+    className: t.string,
+    onOk: t.func,
+    onCancel: t.func,
+    okButtonProps: t.object,
+    cancelButtonProps: t.object,
+    okText: t.string,
+    cancelText: t.string
 };

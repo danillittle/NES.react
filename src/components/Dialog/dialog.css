@@ -1,0 +1,10 @@
+.nes-dialog {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+}
+
+.nes-dialog .dialog-menu {
+    display: flex;
+    justify-content: space-around;
+}

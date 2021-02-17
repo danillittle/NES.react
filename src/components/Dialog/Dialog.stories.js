@@ -12,7 +12,12 @@ const Template = (args) => {
     return (
         <>
             <Button onClick={() => setOpenDialog(true)}>Open dialog</Button>
-            <Dialog {...args} open={openDialog}>
+            <Dialog
+                {...args}
+                visible={openDialog}
+                onOk={() => setOpenDialog(false)}
+                onCancel={() => setOpenDialog(false)}
+            >
                 <p>Alert: this is a dialog.</p>
             </Dialog>
         </>
@@ -21,4 +26,7 @@ const Template = (args) => {
 
 export const Props = Template.bind({});
 
-Props.args = {};
+Props.args = {
+    title: "Dialog",
+    okButtonProps: { kind: "primary" }
+};
