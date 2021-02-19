@@ -7,18 +7,13 @@ export const Item = ({ children, kind = "dark", ...props }) => (
     </span>
 );
 
-const Badge = ({ children, as = "span", kind, icon, className, ...props }) => {
+const Badge = ({ children, as = "span", kind, className, ...props }) => {
     const Tag = as;
     const splited = typeof children !== "string";
 
     return (
         <Tag
-            className={cn(
-                "nes-badge",
-                { "is-splited": splited },
-                { "is-icon": icon },
-                className
-            )}
+            className={cn("nes-badge", { "is-splited": splited }, className)}
             {...props}
         >
             {splited ? children : <Item kind={kind}>{children}</Item>}
@@ -26,6 +21,11 @@ const Badge = ({ children, as = "span", kind, icon, className, ...props }) => {
     );
 };
 
-Badge.propTypes = {};
+Badge.propTypes = {
+    children: t.node,
+    as: t.string,
+    kind: t.oneOf(["primary", "success", "warning", "error", "dark"]),
+    className: t.string
+};
 
 export default Badge;

@@ -1,4 +1,5 @@
 import Badge, { Item } from ".";
+import "./badge.css";
 
 export default {
     title: "Components/Badge",
@@ -7,10 +8,12 @@ export default {
 
 const Template = (args) => (
     <>
-        <Badge {...args}>NES.react</Badge>
+        <Badge as="div" {...args}>
+            NES.react
+        </Badge>
         <Badge {...args}>
             <Item kind="primary">test</Item>
-            <Item kind="warning">1</Item>
+            <Item kind="warning">0%</Item>
         </Badge>
     </>
 );
