@@ -1,13 +1,14 @@
+export { default as Avatar } from "./Avatar";
+export { default as Badge } from "./Badge";
+export { default as Balloon } from "./Balloon";
 export { default as Button } from "./Button";
 export { default as Checkbox } from "./Checkbox";
 export { default as Container } from "./Container";
 export { default as Dialog } from "./Dialog";
 export { default as Input } from "./Input";
 export { default as List } from "./List";
+export { default as Progress } from "./Progress";
 export { default as Radio } from "./Radio";
 export { default as Select } from "./Select";
 export { default as Table } from "./Table";
 export { default as Text } from "./Text";
-export { default as Progress } from "./Progress";
-export { default as Avatar } from "./Avatar";
-export { default as Balloon } from "./Balloon";
