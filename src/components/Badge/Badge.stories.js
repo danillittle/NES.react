@@ -1,4 +1,4 @@
-import Badge, { Item } from ".";
+import Badge from ".";
 import "./badge.css";
 
 export default {
@@ -6,16 +6,34 @@ export default {
     component: Badge
 };
 
-const Template = (args) => (
+const Template = (args) => <Badge {...args}>Badge</Badge>;
+
+export const Props = Template.bind({});
+
+export const Icon = Template.bind({});
+Icon.args = {
+    icon: "hi",
+    iconKind: "primary"
+};
+
+const KindTemplate = (args) => (
     <>
-        <Badge as="div" {...args}>
-            NES.react
+        <Badge {...args} kind="primary">
+            Badge
         </Badge>
-        <Badge {...args}>
-            <Item kind="primary">test</Item>
-            <Item kind="warning">0%</Item>
+        <Badge {...args} kind="success">
+            Badge
+        </Badge>
+        <Badge {...args} kind="warning">
+            Badge
+        </Badge>
+        <Badge {...args} kind="error">
+            Badge
+        </Badge>
+        <Badge {...args} kind="dark">
+            Badge
         </Badge>
     </>
 );
 
-export const Props = Template.bind({});
+export const Kind = KindTemplate.bind({});

@@ -1,22 +1,28 @@
 import cn from "classnames";
 import t from "prop-types";
 
-export const Item = ({ children, kind = "dark", ...props }) => (
-    <span className={cn({ [`is-${kind}`]: kind })} {...props}>
-        {children}
-    </span>
-);
-
-const Badge = ({ children, as = "span", kind, className, ...props }) => {
+const Badge = ({
+    children,
+    as = "span",
+    kind = "dark",
+    icon,
+    iconKind = "warning",
+    className,
+    ...props
+}) => {
     const Tag = as;
-    const splited = typeof children !== "string";
 
     return (
         <Tag
-            className={cn("nes-badge", { "is-splited": splited }, className)}
+            className={cn("nes-badge", { "is-icon": icon }, className)}
             {...props}
         >
-            {splited ? children : <Item kind={kind}>{children}</Item>}
+            {icon && (
+                <span className={cn({ [`is-${iconKind}`]: iconKind })}>
+                    {icon}
+                </span>
+            )}
+            <span className={cn({ [`is-${kind}`]: kind })}>{children}</span>
         </Tag>
     );
 };
@@ -25,6 +31,8 @@ Badge.propTypes = {
     children: t.node,
     as: t.string,
     kind: t.oneOf(["primary", "success", "warning", "error", "dark"]),
+    icon: t.node,
+    iconKind: t.oneOf(["primary", "success", "warning", "error", "dark"]),
     className: t.string
 };
 
