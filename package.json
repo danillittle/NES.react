@@ -4,14 +4,15 @@
     "license": "MIT",
     "main": "./src/index.js",
     "scripts": {
-        "postinstall": "husky install",
-        "prepublishOnly": "pinst --disable",
-        "postpublish": "pinst --enable",
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
-        "deploy-storybook": "storybook-to-ghpages",
-        "commit": "cz",
-        "release": "standard-version"
+        "postinstall": "husky install",
+        "release": "standard-version",
+        "postrelease": "git push --follow-tags && npm publish",
+        "prepublishOnly": "pinst --disable",
+        "publish": "storybook-to-ghpages",
+        "postpublish": "pinst --enable",
+        "commit": "cz"
     },
     "dependencies": {
         "classnames": "^2.2.6",
