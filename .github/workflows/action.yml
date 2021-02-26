@@ -21,9 +21,9 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
-    - name: Use Node.js ${{ matrix.node-version }}
+    - name: Deploy to Github Pages
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm ci
-    - run: npm run deploy-storybook -- --ci
+    - run: npm run deploy-storybook -- --ci --host-token-env-variable=${{ secrets.GH_TOKEN }}
