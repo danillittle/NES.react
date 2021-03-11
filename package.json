@@ -6,11 +6,12 @@
     "scripts": {
         "storybook": "start-storybook -p 6006",
         "build-storybook": "build-storybook",
+        "deploy-storybook": "storybook-to-ghpages",
         "postinstall": "husky install",
         "release": "standard-version",
         "postrelease": "git push --follow-tags && npm publish",
         "prepublishOnly": "pinst --disable",
-        "publish": "storybook-to-ghpages",
+        "publish": "deploy-storybook",
         "postpublish": "pinst --enable",
         "commit": "cz"
     },
